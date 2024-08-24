@@ -18,4 +18,4 @@ jobs:
       - name: Deploy to Railway
         run: railway up --service="emoji-generator"
         env:
-          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
