@@ -8,9 +8,10 @@ import { AuthGuard } from './common/auth/auth.guard';
 import { BrowserInterceptor } from './common/browser/browser.interceptor';
 import { TransformReponseInterceptor } from './common/transform-reponse/transform-reponse.interceptor';
 import { AllExceptionsFilter } from './common/all-exceptions/all-exceptions.filter';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [ConfigModule.forRoot()],
   controllers: [AppController],
   providers: [
     AppService,
