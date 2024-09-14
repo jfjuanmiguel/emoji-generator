@@ -6,7 +6,7 @@ import { LoggerService } from './logger.service';
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { AuthGuard } from './common/auth/auth.guard';
 import { BrowserInterceptor } from './common/browser/browser.interceptor';
-import { TransformReponseInterceptor } from './common/transform-reponse/transform-reponse.interceptor';
+import { TransformResponseInterceptor } from './common/transform-reponse/transform-response-interceptor.service';
 import { AllExceptionsFilter } from './common/all-exceptions/all-exceptions.filter';
 import { ConfigModule } from '@nestjs/config';
 
@@ -26,7 +26,7 @@ import { ConfigModule } from '@nestjs/config';
     },
     {
       provide: APP_INTERCEPTOR,
-      useClass: TransformReponseInterceptor,
+      useClass: TransformResponseInterceptor,
     },
     {
       provide: APP_FILTER,

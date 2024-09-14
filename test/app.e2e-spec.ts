@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
-import { AppService } from './../src/app.service';
+import { AppModule } from '../src/app.module';
+import { AppService } from '../src/app.service';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -48,7 +48,7 @@ describe('AppController (e2e)', () => {
         });
     });
 
-    it(`Shoud return 403 Forbidden when an invalid x-api-key header is provided`, () => {
+    it(`should return 403 Forbidden when an invalid x-api-key header is provided`, () => {
       return request(app.getHttpServer()).get('/').expect(403);
     });
   });

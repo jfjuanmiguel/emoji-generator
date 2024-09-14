@@ -7,4 +7,4 @@ async function bootstrap() {
   const host = `0.0.0.0`;
   await app.listen(port, host);
 }
-bootstrap();
+bootstrap().then(() => {});

@@ -10,8 +10,7 @@ import { Observable } from 'rxjs';
 export class BrowserInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const request = context.switchToHttp().getRequest();
-    const browser = request.header(`user-agent`) || `Unknown`;
-    request.headers.browser = browser;
+    request.headers.browser = request.header(`user-agent`) || `Unknown`;
     console.log(
       `Interceptor: manipulated request with new browser header: ${request.headers.browser}`,
     );

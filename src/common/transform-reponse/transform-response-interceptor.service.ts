@@ -7,8 +7,8 @@ import {
 import { map, Observable } from 'rxjs';
 
 @Injectable()
-export class TransformReponseInterceptor implements NestInterceptor {
-  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+export class TransformResponseInterceptor implements NestInterceptor {
+  intercept(_context: ExecutionContext, next: CallHandler): Observable<any> {
     return next.handle().pipe(
       map((data) => {
         console.log(`Interceptor - after handler: manipulate response`);
